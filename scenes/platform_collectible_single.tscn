@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://disglh5pn8hh7"]
+
+[ext_resource type="Texture2D" uid="uid://cb4i7jdxbcdj0" path="res://assets/sprites/Platform/platform.png" id="1_vw5xb"]
+[ext_resource type="PackedScene" uid="uid://i4ccdw5mpeqq" path="res://scenes/collectible.tscn" id="2_m5or2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wg0a5"]
+size = Vector2(380, 40)
+
+[node name="Platform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vw5xb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -20)
+shape = SubResource("RectangleShape2D_wg0a5")
+
+[node name="Collectible" parent="." instance=ExtResource("2_m5or2")]
+position = Vector2(-1, -81)
+scale = Vector2(0.3, 0.3)
